@@ -1,0 +1,92 @@
+(defwindow powermenu_idle
+    :monitor '[0]'
+    :stacking 'bg'
+    :namespace "eww"
+    :geometry (geometry
+        :x "12"
+        :y "12"
+        :width "80"
+        :height "80"
+        :anchor "bottom right")
+    (powermenu_idle)
+)
+
+(defwidget powermenu_idle []
+    (box
+        :height "80"
+        :width "80"
+        :halign "center"
+        :valign "center"
+        :class "userinfo-parent"
+        (box
+            :height "80"
+            :width "80"
+            :halign "center"
+            :valign "center"
+            :class "userinfo-child"
+            (button
+                :onclick "eww open powermenu"
+                :class "button"
+                (label
+                    :class "icon-label"
+                    :text "⭘"))))
+)
+
+(defwindow powermenu
+    :monitor '[0]'
+    :stacking 'bg'
+    :namespace "eww"
+    :geometry (geometry
+        :x "12"
+        :y "12"
+        :width "80"
+        :height "80"
+        :anchor "bottom right")
+    (powermenu)
+)
+
+(defwidget powermenu []
+    (centerbox 
+        :height "80"
+        :width "240"
+        :halign "center"
+        :valign "center"
+        :class "userinfo-parent"
+        (box 
+            :height "80" 
+            :width "80" 
+            :halign "center" 
+            :valign "center" 
+            :class "userinfo-child"
+            (button 
+                :onclick "systemctl poweroff" 
+                :class "poweroff-button"
+                (label 
+                    :class "icon-label"  
+                    :text "⏻")))
+        (box 
+            :height "80" 
+            :width "80" 
+            :halign "center" 
+            :valign "center" 
+            :class "userinfo-child"
+            (button 
+                :onclick "systemctl suspend"  
+                :class "suspend-button"
+                (label 
+                    :class "icon-label"  
+                    :text "⏾")))
+        (box
+            :height "80" 
+            :width "80" 
+            :halign "center" 
+            :valign "center" 
+            :class "userinfo-child"
+            (button 
+                :onclick "eww close powermenu" 
+                :class "button"
+                (label 
+                    :class "icon-label" 
+                    :text "⨯")))
+    )
+)

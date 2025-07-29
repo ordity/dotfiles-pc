@@ -1,0 +1,72 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json
+palette:
+  black: "#282828"
+  red: "#cc241d"
+  green: "#98971a"
+  yellow: "#d79921"
+  blue: "#458588"
+  purple: "#b16286"
+  aqua: "#689d6a"
+  gray: "#a89984"
+  dark_gray: "#928374"
+  b_red: "#fb4934"
+  b_green: "#b8bb26"
+  b_yellow: "#fabd2f"
+  b_blue: "#83a598"
+  b_purple: "#dd869b"
+  b_aqua: "#8ec07c"
+  white: "#ebdbb2"
+  accent: "#d65d0e"
+  orange: p:accent
+  b_accent: "#fe8019"
+
+secondary_prompt:
+  template: "\u276f\u276f "
+  foreground: p:aqua
+  background: transparent
+
+transient_prompt:
+  template: "{{ .Shell }}>"
+  foreground: p:black
+  background: transparent
+
+console_title_template: "{{ .Shell }}: {{ .Folder }}"
+
+upgrade:
+  source: cdn
+  interval: 168h
+  auto: false
+  notice: false
+
+blocks:
+  - type: prompt
+    alignment: left
+    segments:
+      - template: " {{ .UserName }}@{{ .HostName }} "
+        foreground: p:green
+        background: transparent
+        type: session
+        style: plain
+      - properties:
+          style: folder
+        template: " \uea83 {{ path .Path .Location }} "
+        foreground: p:yellow
+        background: transparent
+        type: path
+        style: plain
+      - properties:
+          always_enabled: false
+        template: "!"
+        foreground: p:purple
+        background: transparent
+        type: status
+        style: plain
+        foreground_templates:
+          - p:b_red
+      - properties:
+        template: "\n\u276f "
+        foreground: p:accent
+        type: shell
+
+version: 3
+final_space: true

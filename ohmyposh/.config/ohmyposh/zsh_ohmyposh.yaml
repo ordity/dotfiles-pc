@@ -1,0 +1,117 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json
+palette:
+  # gruvbox color palette
+  black: "#282828"
+  red: "#cc241d"
+  green: "#98971a"
+  yellow: "#d79921"
+  blue: "#458588"
+  purple: "#b16286"
+  aqua: "#689d6a"
+  gray: "#a89984"
+  dark_gray: "#928374"
+  b_red: "#fb4934"
+  b_green: "#b8bb26"
+  b_yellow: "#fabd2f"
+  b_blue: "#83a598"
+  b_purple: "#dd869b"
+  b_aqua: "#8ec07c"
+  white: "#ebdbb2"
+  accent: "#d65d0e"
+  orange: p:accent
+  b_accent: "#fe8019"
+
+secondary_prompt:
+  template: "\u276f\u276f "
+  foreground: p:aqua
+  background: transparent
+
+transient_prompt:
+  template: "\u276f "
+  foreground: p:b_purple
+  background: transparent
+
+console_title_template: "{{ .Shell }}: {{ .Folder }}"
+
+upgrade:
+  source: cdn
+  interval: 168h
+  auto: false
+  notice: false
+
+blocks:
+  # left prompt, line 1
+  - type: prompt
+    alignment: left
+    newline: true
+    segments:
+      # username
+      - type: session
+        style: plain
+        template: "<b>{{ .UserName }}@{{ .HostName }}</b> "
+        foreground: p:green
+        background: transparent
+      # location
+      - type: path
+        style: plain
+        template: "<b>\uea83 {{ path .Path .Location }}</b> "
+        foreground: p:yellow
+        background: transparent
+        properties:
+          style: folder
+      # shell name
+      - type: shell
+        template: "<b>{{ .Shell }}</b> "
+        foreground: p:aqua
+        background: transparent
+      # git status
+      - type: git
+        style: plain
+        template: "{{ .HEAD }}{{ if or (.Working.Changed) (.Staging.Changed) }}*{{ end }} <p:red>{{ if gt .Behind 0 }}\uea9a{{ end }}</><p:b_green>{{ if gt .Ahead 0 }}\ueaa1{{ end }}</>"
+        foreground: p:gray
+        background: transparent
+        properties:
+          branch_icon: ""
+          commit_icon: "@"
+          fetch_status: true
+  # right prompt, line 1
+  - type: prompt
+    newline: false
+    alignment: right
+    overflow: hidden
+    segments:
+      # time execution
+      - type: executiontime
+        style: plain
+        template: "\uf254 <b>{{ .FormattedMs }}</b> "
+        foreground: p:accent
+        background: transparent
+        properties:
+          threshold: 2000
+          style: austin
+          always_enabled: false
+      # current time
+      - type: time
+        style: plain
+        template: "<b>\uf017 {{ .CurrentDate | date .Format }}</b> "
+        foreground: p:purple
+        background: transparent
+        properties:
+          time_format: "15:04:05"
+  # left prompt, line 2
+  - type: prompt
+    newline: true
+    alignment: left
+    segments:
+      # status / command prompt
+      - type: status
+        style: plain
+        template: "\u276f"
+        foreground: p:blue
+        foreground_templates: ["{{ if gt .Code 0 }}p:b_red{{ end }}"]
+        background: transparent
+        properties:
+          always_enabled: true
+
+version: 3
+final_space: true

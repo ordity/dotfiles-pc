@@ -1,0 +1,120 @@
+// -*- mode: jsonc -*-
+{
+    // Globals
+    "layer": "top",
+    "position": "top",
+    "height": 32,
+    "spacing": 0,
+
+    // Positioning
+    "modules-left": [
+        "sway/workspaces",
+        "sway/mode",
+        "hyprland/workspaces",
+        "hyprland/submap",
+    ],
+    
+    "modules-center": [
+        "sway/window",
+        "hyprland/window",
+    ],
+
+    "modules-right": [
+        "tray",
+        "wireplumber",
+        "network",
+        "memory",
+        "cpu",
+        "clock"
+    ],
+
+    // Modules
+
+    // Left
+
+    "sway/workspaces": {
+        "disable-scroll": false,
+        "all-outputs": false,
+        "warp-on-scroll": false,
+        "tooltip": false,
+    },
+
+    "sway/mode": {
+        "tooltip": false,
+    },
+
+    "hyprland/workspaces": {
+        "format": "{icon}",
+        "format-icons": {
+            "active": "",
+            "default": ""
+        }
+    },
+    
+    "hyprland/submap": {},
+
+    // Centre
+
+    "sway/window": {
+        "rotate": 0,
+        "tooltip": false,
+        "all-outputs": false,
+    },
+
+    "hyprland/window": {
+        "format": "\u276f {}"
+    },
+    
+    // Right
+
+    "tray": {
+        "icon-size": 18,
+        "spacing": 6
+    },
+
+    "wireplumber": {
+        "format": "{icon} {volume}%",
+        "format-muted": "",
+        "on-click": "helvum",
+        "format-icons": ["", "", ""],
+        "on-click": "pavucontrol"
+    },
+
+    "network": {
+        "interval": 60,
+        "format-ethernet": " {bandwidthDownBits}",
+        "format-wifi": "{essid} ({signalStrength}%) ",
+        "tooltip-format": "{ifname} via {gwaddr} ",
+        "format-linked": "{ifname} (No IP) ",
+        "format-disconnected": "Disconnected ⚠",
+        "format-alt": "{ifname}: {ipaddr}/{cidr}"
+    },
+
+    "memory": {
+        "format": " {}%"
+    },
+
+    "cpu": {
+        "format": " {usage}%",
+        "tooltip": true
+    },
+
+    "clock": {
+        // "timezone": "America/New_York",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "format-alt": "{:%Y-%m-%d}"
+    },
+
+    "custom/power": {
+        "format" : "⏻ ",
+		"tooltip": false,
+		"menu": "on-click",
+		"menu-file": "$HOME/.config/waybar/power_menu.xml", // Menu file in resources folder
+		"menu-actions": {
+			"shutdown": "shutdown",
+			"reboot": "reboot",
+			"suspend": "systemctl suspend",
+			"hibernate": "systemctl hibernate"
+		}
+    },
+}

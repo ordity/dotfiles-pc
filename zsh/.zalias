@@ -1,0 +1,34 @@
+## ALIASES
+
+# Make grep use colors.
+alias grep='grep --color=auto'
+
+# Use 'prettyping' instead of 'ping'.
+alias ping='prettyping'
+
+alias nm='nmtui'
+
+alias audio='pulsemixer'
+
+# Use neovim instead of vim.
+alias vim='nvim'
+
+# Better alternative for ls.
+alias ls='eza --icons=always'
+
+# Better alternative for top.
+alias top='btop'
+
+alias nf='neofetch'
+
+# Make n³ use vim for editing text.
+alias nnn='nnn -e'
+
+# Get list of n³ selected files.
+alias ncp="cat ${NNN_SEL:-${XDG_CONFIG_HOME:-$HOME/.config}/nnn/.selection} | tr '\0' '\n'"
+
+# Yazi
+#alias y="$HOME/.util-scripts/y.sh"
+
+# System management
+alias sysm="~/.util-scripts/sys-maintain.sh"

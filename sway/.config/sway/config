@@ -1,0 +1,42 @@
+#### i3 config file (v4)
+# Riced by bsaw.
+# Goals of this configuration:
+#   - Add comments over every option for ease of reconfiguration.
+#   - Make names self-explainatory where I could.
+#   - Categorizing all configuration options into multiple files and sections within those files.
+#   - Make configuration code look consistent.
+# 
+# You can go into specific file to see a brief explanation for what is it's purpose.
+# 
+# Note: My preferred line limit is 100, however some lines had to go over that limit.
+# 
+
+## VARIABLES
+# Variables used in the configuration.
+# The only exception are variables for colours in visuals config.
+# These are not meant to be edited directly.
+
+# Set mod to meta key.
+set $mod Mod4
+
+# Set audio up/down step value.
+set $volume-step 1
+
+# Set brightness up/down step value.
+set $backlight-step 5
+
+# Set resize step value.
+set $resize-step 10
+set $resize-step-shift 25
+
+## INCLUDED CONFIGURATIONS
+include double-screen.conf
+include misc.conf
+include modes.conf
+include shortcuts.conf
+include startup.conf
+include swayfx.conf
+include visuals.conf
+include window.conf
+include workspaces.conf
+

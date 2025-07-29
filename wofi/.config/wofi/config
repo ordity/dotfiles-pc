@@ -1,0 +1,8 @@
+allow_images=true
+image_size = 16
+width = 15%
+height = 25%
+location=top
+yoffset = 50
+hide_scroll=true
+key_expand=Right
