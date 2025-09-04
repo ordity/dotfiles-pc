@@ -3,8 +3,8 @@
     // Globals
     "layer": "top",
     "position": "top",
-    "height": 32,
-    "spacing": 0,
+    "height": 24,
+    "spacing": 2,
 
     // Positioning
     "modules-left": [
@@ -46,8 +46,8 @@
     "hyprland/workspaces": {
         "format": "{icon}",
         "format-icons": {
-            "active": "",
-            "default": ""
+            "active": "  ",
+            "default": "  "
         }
     },
     
@@ -82,7 +82,7 @@
 
     "network": {
         "interval": 60,
-        "format-ethernet": " {bandwidthDownBits}",
+        "format-ethernet": "\uef44 {bandwidthDownBits}",
         "format-wifi": "{essid} ({signalStrength}%) ",
         "tooltip-format": "{ifname} via {gwaddr} ",
         "format-linked": "{ifname} (No IP) ",

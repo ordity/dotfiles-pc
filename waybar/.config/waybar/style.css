@@ -1,6 +1,6 @@
 * {
   font-family: JetBrainsMono Nerd Font;
-  font-size: 16px;
+  font-size: 14px;
   border-radius: 0px;
   border: none;
   min-height: 0;
@@ -11,7 +11,7 @@
 
 window#waybar {
   background-color: rgba(40, 40, 40, 0.6);
-  border-bottom: 2px solid rgba(254, 128, 25, 0.6);
+  border-bottom: 0px solid rgba(254, 128, 25, 0.6);
   transition-property: background-color;
   transition-duration: 0.5s;
   border-radius: 0px;
@@ -28,7 +28,7 @@ menu {
 }
 
 #workspaces button {
-  padding: 0 12px;
+  padding: 0 6px;
   background: transparent;
   border-bottom: 4px solid transparent;
   border-radius: 0px;
@@ -40,10 +40,10 @@ menu {
   border-bottom: 3px solid #98971a;
 }
 
-#mode {
+#mode, #submap {
   padding: 0 24px;
   background: rgba(211, 134, 155, 0.1);
-  border-bottom: 3px solid #d3869b;
+  border-bottom: 0px solid #d3869b;
 }
 
 #tray,
