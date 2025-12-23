@@ -82,6 +82,11 @@ PanelWindow {
         Spacer {}
 
         // // RIGHT SIDE
+        //
+        Systray {
+            id: sysTray
+            // anchors.verticalCenter: parent.verticalCenter
+        }
         
         Separator {}
 
